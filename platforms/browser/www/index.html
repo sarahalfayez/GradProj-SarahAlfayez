@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+        <link rel="stylesheet" type="text/css" href="css/themes/sm.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css" />
+        <title>Speical Moments</title>
+    </head>
+    <body>
+        <!--Landout Page-->
+        <div data-role="page" id="page-index">
+            <div data-role="header">
+                <h1>Welcome to Special Moments</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p><b>For Parents</b></p>
+                <a href="#page-signin-parents" class="ui-btn ui-corner-all ui-shadow">Parents Sign In</a>
+                <p><b>For Caregivers</b></p>
+                <a href="#page-signin-caregivers" class="ui-btn ui-corner-all ui-shadow">Caregivers Sign In</a>
+            </div>
+            <div data-role="footer">
+                <h1> 2016 &copy Special Moments</h1>
+            </div>
+        </div> <!-- End of Lanout Page-->
+        <!-- Parents SignIn Page-->
+        <div data-role="page" data-dialog="true" id="page-signin-parents">
+            <div data-role="header">
+                <h1>Sign In</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form method="POST" acton="/login" id="signin" data-ajax="false">
+                <label for="uname">User Name:</label>
+                <input type="text" name="uname" id="uname" data-clear-btn="true" class="required">
+                <p id="unmae-err"></p>
+                <label for="pword">Password</label>
+                <input type="password" name="pword" id="pword" data-clear-btn="true" class="required">
+                <a id="psignin-btn" href="#page-parents" data-rel="popup" data-transition="pop" data-position-to="window" class="ui-btn ui-corner-all ui-shadow">Sign In</a>
+                <!--invalid crediatials popup-->
+                <div data-role="popup" id="invalid-credentials" data-dismissible="false" style="max-width:400px;">
+                    <div role="main" class="ui-content">
+                        <h3 class="mc-text-danger">Login Failed</h3>
+                        <p>Did you enter the right credentials?</p>
+                        <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+                    </div>
+                </div><!--End of invalid crediatials popup-->
+            </form>
+            </div>
+            <div data-role="footer">
+                <h1> 2016 &copy Special Moments</h1>
+            </div>
+        </div> <!-- End of Parents SignIn Page-->
+        <!-- Caregivers SignIn Page-->
+        <div data-role="page" data-dialog="true" id="page-signin-caregivers">
+            <div data-role="header">
+                <h1>Sign In</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <label for="uname">User Name:</label>
+                <input type="text" name="uname" id="uname" data-clear-btn="true">
+                <label for="pword">Password</label>
+                <input type="password" name="pword" id="pword" data-clear-btn="true">
+                <a id="csignin-btn" href="#page-caregivers" class="ui-btn ui-corner-all ui-shadow">Sign In</a>
+            </div>
+            <div data-role="footer">
+                <h1> 2016 &copy Special Moments</h1>
+            </div>
+        </div> <!-- End of Caregivers SignIn Page-->
+        <!-- Parents Page-->
+        <div data-role="page" data-dialog="true" id="page-parents">
+            <div data-role="header">
+                <a href="#page-index" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+                <h1>Welcome Parents</h1>
+                <a href="#page-index" class="ui-btn ui-corner-all ui-shadow ui-icon-lock ui-btn-icon-left">Logout</a>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div data-role="controlgroup" data-type="vertical">
+                    <a id="food" href="#pfood" data-rel="popup" class="ui-btn">Food</a>
+                    <a id="bathroom" href="#pbathroom" data-rel="popup" class="ui-btn">Bathroom</a>
+                    <a id="nap" href="#pnap" data-rel="popup" class="ui-btn">Naps</a>
+                    <a id="activity" href="#pactivity" data-rel="popup" class="ui-btn">Activities</a>
+                    <a id="note" href="#pnote" data-rel="popup" class="ui-btn">Notes</a>
+                    <a id="photo" href="#pphoto" data-rel="popup" class="ui-btn">Photo</a>
+                </div>
+                <div data-role="popup" id="pfood" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                </div>
+                <div data-role="popup" id="pbathroom" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                </div>
+                <div data-role="popup" id="pnap" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                </div>
+                <div data-role="popup" id="pactivity" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                </div>
+                <div data-role="popup" id="pnote" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+
+                </div>
+            </div>
+            <div data-role="footer">
+                <h1> 2016 &copy Special Moments</h1>
+            </div>
+        </div> <!-- End of Parents Page-->
+        <!-- Caregivers Page-->
+        <div data-role="page" data-dialog="true" id="page-caregivers">
+            <div data-role="header">
+                <a href="#page-index" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+                <h1>Welcome Caregivers</h1>
+                <a href="#page-index" class="ui-btn ui-corner-all ui-shadow ui-icon-lock ui-btn-icon-left">Logout</a>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <li><a href="#cfood-popup" data-rel="popup">Food </a></li>
+                        <li><a href="#cbathroom-popup" data-rel="popup">Bathroom</a></li>
+                        <li><a href="#cnaps-popup" data-rel="popup">Naps</a></li>
+                        <li><a href="#cactivities-popup" data-rel="popup">Activities</a></li>
+                        <li><a href="#cnotes-popup" data-rel="popup" data-icon="comment">Notes</a></li>
+                        <li><a href="#ccamera-popup" data-rel="popup" data-icon="camera">Camera</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <!-- C Food Popup-->
+                <div data-role="popup" id="cfood-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3>Food information</h3>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date">
+                            <label for="time">Time:</label>
+                            <input type="time" name="time" id="time">
+                            <label for="food">Food:</label>
+                            <textarea name="food" id="food"></textarea>
+                            <input id="btn-food" type="submit" data-inline="true" value="Submit">
+                        </div>
+                    </form>
+                </div><!-- End C Food Popup-->
+                <!-- C Bathroom Popup-->
+                <div data-role="popup" id="cbathroom-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3>Bathroom information</h3>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date">
+                            <label for="time">Time:</label>
+                            <input type="time" name="time" id="time">
+                            <fieldset id="btype" data-role="controlgroup">
+                                <legend>Type:</legend>
+                                <label for="dry">Dry</label>
+                                <input type="radio" name="btype" id="dry" value="dry">
+                                <label for="wet">Wet</label>
+                                <input type="radio" name="btype" id="wet" value="wet">
+                                <label for="bm">Bowel Movement</label>
+                                <input type="radio" name="btype" id="bm" value="bm">
+                            </fieldset>
+                            <input id="btn-bathroom" type="submit" data-inline="true" value="Submit">
+                        </div>
+                    </form>
+                </div><!-- End C Bathroom Popup-->
+                <!-- C Naps Popup-->
+                <div data-role="popup" id="cnaps-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3>Naps information</h3>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date">
+                            <label for="time">From:</label>
+                            <input type="time" name="ftime" id="ftime">
+                            <label for="time">To:</label>
+                            <input type="time" name="ttime" id="ttime">
+                            <input id="btn-nap" type="submit" data-inline="true" value="Submit">
+                        </div>
+                    </form>
+                </div><!-- End C Naps Popup-->
+                <!-- C Activities Popup-->
+                <div data-role="popup" id="cactivities-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3> Activities information</h3>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date">
+                            <label for="time">Time:</label>
+                            <input type="time" name="time" id="time">
+                            <label for="activity">Activity:</label>
+                            <textarea name="activity" id="activity"></textarea>
+                            <input id="btn-activity" type="submit" data-inline="true" value="Submit">
+                        </div>
+                    </form>
+                </div><!-- End C Activities Popup-->
+                <!-- C Notes Popup-->
+                <div data-role="popup" id="cnotes-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3> Notes: </h3>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date">
+                            <label for="time">Time:</label>
+                            <input type="time" name="time" id="time">
+                            <label for="note">Note:</label>
+                            <textarea name="note" id="note"></textarea>
+                            <input id="btn-note" type="submit" data-inline="true" value="Submit">
+                        </div>
+                    </form>
+                </div><!-- End C Notes Popup-->
+                <!-- C Camera Popup-->
+                <div data-role="popup" id="ccamera-popup" class="ui-content" style="min-width:250px;">
+                    <a href="#" data-rel="back" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <form method="post">
+                        <div>
+                            <h3> Take a photo: </h3>
+                            <input id="btn-camera" type="submit" data-inline="true" value="Take a photo">
+                            <img id="img" src="img/baby.jpg">
+                        </div>
+                    </form>
+                </div><!-- End C Camera Popup-->
+            </div>
+            <div data-role="footer">
+                <h1> 2016 &copy Special Moments</h1>
+            </div>
+        </div> <!-- End of Caregivers Page-->
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/client.js"></script>
+    </body>
+</html>

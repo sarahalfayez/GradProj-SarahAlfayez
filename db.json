@@ -1,0 +1,147 @@
+{
+  "parents": [
+    {
+      "id": 1,
+      "username": "sarah",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "mohammed",
+      "password": "12345"
+    },
+    {
+      "id": 3,
+      "username": "noor",
+      "password": "12345"
+    }
+  ],
+  "caregivers": [
+    {
+      "id": 1,
+      "username": "nancy",
+      "password": "12345",
+      "childrens_id": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "username": "jenny",
+      "password": "12345",
+      "childrens_id": [
+        2,
+        3
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 1,
+      "name": "Adam",
+      "parent_id": 1,
+      "caregiver_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Eve",
+      "parent_id": 3,
+      "caregiver_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Jim",
+      "parent_id": 2,
+      "caregiver_id": 2
+    }
+  ],
+  "food": [
+    {
+      "child_id": 1,
+      "date": "2016-05-04",
+      "time": "12:45",
+      "food": "100% sandwhich and veggies",
+      "id": "9f3464f9-feb5-4d59-a819-8d816fcb6e63"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-03",
+      "time": "15:15",
+      "food": "75% of soup and veggies",
+      "id": "55781bb0-dc98-4536-be65-9db7eb86128f"
+    }
+  ],
+  "bathroom": [
+    {
+      "child_id": 1,
+      "date": "2016-05-10",
+      "time": "15:00",
+      "type": "bm",
+      "id": "de17c386-618e-4e44-9f46-88b3056471e6"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-05",
+      "time": "10:15",
+      "type": "wet",
+      "id": "8fd899e9-3e2a-428e-8530-c15dc3d7cf97"
+    }
+  ],
+  "nap": [
+    {
+      "child_id": 1,
+      "date": "2016-05-10",
+      "from": "12:00",
+      "to": "14:00"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-11",
+      "from": "12:00",
+      "to": "14:00"
+    }
+  ],
+  "activity": [
+    {
+      "child_id": 1,
+      "date": "2016-05-04",
+      "time": "12:45",
+      "activity": "paly outside"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-04",
+      "time": "10:45",
+      "activity": "read book"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-03",
+      "time": "16:00",
+      "activity": "played with bubbles",
+      "id": "32f892e0-09d3-4d49-9eb9-3ebf957e0385"
+    }
+  ],
+  "note": [
+    {
+      "child_id": 1,
+      "date": "2016-05-04",
+      "time": "10:45",
+      "note": "adam needs wipes"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-03",
+      "time": "10:45",
+      "note": "adam was very calm today"
+    },
+    {
+      "child_id": 1,
+      "date": "2016-05-04",
+      "time": "13:50",
+      "note": "Adam was very happy today",
+      "id": "3650416f-3fed-47ea-8d3d-5ff18f85b18b"
+    }
+  ]
+}
