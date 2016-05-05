@@ -1,5 +1,5 @@
 # GradProj-SarahAlfayez
-# Special Momnets
+# Special Momenets
 
 #Project Description:
 Special Moments is a mobile application built using Apache Cordova/PhoneGap cross-platform framework. 
